@@ -1,0 +1,32 @@
+/* .popular-books-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.popular-book {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.popular-book img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.popular-book-info {
+    padding: 1rem;
+}
+
+.popular-book-info .fw-6 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.popular-book-info span {
+    display: block;
+    opacity: 0.8;
+} */

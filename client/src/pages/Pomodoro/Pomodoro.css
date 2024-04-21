@@ -1,0 +1,72 @@
+/* .pomodoro {
+    text-align: center;
+  }
+  
+  .timer {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  
+  .buttons button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+  
+  .buttons button:first-child {
+    background-color: #4caf50;
+  }
+  
+  .buttons button:last-child {
+    background-color: #f44336;
+  }
+   */
+
+
+   .pomodoro {
+    text-align: center;
+  }
+  
+  .timer {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  
+  .buttons button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+  
+  .buttons button:first-child {
+    background-color: #4caf50;
+  }
+  
+  .buttons button:last-child {
+    background-color: #f44336;
+  }
+  
+  .clocks {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .filled {
+    position: absolute;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+  }
+  
+  .empty {
+    height: 100%;
+    background-color: transparent;
+  }
+     
