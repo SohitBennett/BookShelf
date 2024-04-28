@@ -60,3 +60,5 @@ const Wrapper = styled.section`
 `;
 
 export default Star;
+
+// nothing
