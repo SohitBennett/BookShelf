@@ -142,6 +142,7 @@ app.post("/userData", async (req, res) => {
     }
 });
 
+// function to add favorites
 app.post('/api/favorites/add', async (req, res) => {
     try {
         const { email, bookId } = req.body;
