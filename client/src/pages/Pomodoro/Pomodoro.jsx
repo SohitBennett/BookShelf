@@ -1,5 +1,8 @@
+
+
 // import React, { useState, useEffect } from 'react';
 // import './Pomodoro.css';
+// import Navbar from '../../components/Navbar/Navbar';
 
 // const Pomodoro = () => {
 //   const [minutes, setMinutes] = useState(25);
@@ -43,15 +46,29 @@
 //     return time < 10 ? `0${time}` : time;
 //   };
 
-//   return (
-//     <div className="pomodoro">
-//       <h1>Pomodoro Timer</h1>
-//       <div className="timer">
-//         {formatTime(minutes)}:{formatTime(seconds)}
+//   const renderClocks = () => {
+//     const filledPercentage = (minutes * 60 + seconds) / (25 * 60) * 100;
+//     return (
+//       <div className="clocks">
+//         <div className="filled" style={{ width: `${filledPercentage}%` }} />
+//         <div className="empty" />
 //       </div>
-//       <div className="buttons">
-//         <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-//         <button onClick={resetTimer}>Reset</button>
+//     );
+//   };
+
+//   return (
+//     <div>
+//       <Navbar />
+//       <div className="pomodoro">
+//         <h1>Pomodoro Timer</h1>
+//         {renderClocks()}
+//         <div className="timer">
+//           {formatTime(minutes)}:{formatTime(seconds)}
+//         </div>
+//         <div className="buttons">
+//           <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
+//           <button onClick={resetTimer}>Reset</button>
+//         </div>
 //       </div>
 //     </div>
 //   );
@@ -60,13 +77,42 @@
 // export default Pomodoro;
 
 
+
+
+
+// import React from 'react';
+// import { Outlet } from 'react-router-dom';
+// import App from './App';
+
+
+// const Pomodoro = () => {
+//   return (
+//     <main>
+//       <App />
+//       <Outlet />
+//     </main>
+//   );
+// };
+
+// export default Pomodoro;
+
+
+
 import React, { useState, useEffect } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import './Pomodoro.css';
+import Navbar from '../../components/Navbar/Navbar';
+import Background from '../../components/Background/Background';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faRedo, faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const Pomodoro = () => {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const [playStatus,setPlayStatus] = useState(true);
 
   useEffect(() => {
     let interval;
@@ -105,26 +151,27 @@ const Pomodoro = () => {
     return time < 10 ? `0${time}` : time;
   };
 
-  const renderClocks = () => {
-    const filledPercentage = (minutes * 60 + seconds) / (25 * 60) * 100;
-    return (
-      <div className="clocks">
-        <div className="filled" style={{ width: `${filledPercentage}%` }} />
-        <div className="empty" />
-      </div>
-    );
-  };
-
   return (
-    <div className="pomodoro">
-      <h1>Pomodoro Timer</h1>
-      {renderClocks()}
-      <div className="timer">
-        {formatTime(minutes)}:{formatTime(seconds)}
-      </div>
-      <div className="buttons">
-        <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-        <button onClick={resetTimer}>Reset</button>
+    <div>
+      <Navbar />
+      <br/>
+      <Background playStatus={playStatus} />
+      <div className="pomodoro">
+        <h1 className="timer-heading">Pomodoro Timer</h1>
+        <br/>
+        <div style={{ width: '200px', margin: '0 auto' }}>
+          <CircularProgressbar
+            value={(minutes * 60 + seconds) / (25 * 60) * 100}
+            text={`${formatTime(minutes)}:${formatTime(seconds)}`}
+          />
+        </div>
+        <br/>
+        <div className="buttons">
+          <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
+          <button onClick={resetTimer}>Reset</button>
+        </div>
+
+        
       </div>
     </div>
   );

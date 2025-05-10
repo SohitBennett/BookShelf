@@ -1,7 +1,16 @@
 .search-form{
     width: 100%;
     max-width: 1000px;
+   
 }
+
+
+.search-form-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .search-form-elem{
     padding: 1.4rem 2.8rem;
     border-radius: 3.8rem;

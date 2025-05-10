@@ -5,8 +5,10 @@ import { useGlobalContext } from '../../context.';
 import "./SearchForm.css";
 import Navbar from '../Navbar/Navbar';
 
+
 const SearchForm = () => {
   const {setSearchTerm, setResultTitle} = useGlobalContext();
+
   const searchText = useRef('');
   const navigate = useNavigate();
 

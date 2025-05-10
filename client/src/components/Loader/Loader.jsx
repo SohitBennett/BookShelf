@@ -1,12 +1,16 @@
 import React from 'react';
 import LoaderImg from "../../images/loader.svg";
 import "./Loader.css";
+import Navbar from '../../components/Navbar/Navbar';
+
 
 const Loader = () => {
   return (
+
     <div className='loader flex flex-c'>
       <img src = {LoaderImg} alt = "loader" />
     </div>
+
   )
 }
 

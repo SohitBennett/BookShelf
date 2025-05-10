@@ -128,12 +128,13 @@ const AddToFavoritesButton = ({ bookId, email }) => {
   
   //----------------working---------for one account
   useEffect(() => {
-    
+
+
     const checkFavoriteStatus = async () => {
       try {
         const response = await axios.get(`http://localhost:3001/check-favorite/${bookId}`, {
           params: {
-            // email: email,
+            email: email,
             bookId: bookId
           },
         });
@@ -145,24 +146,11 @@ const AddToFavoritesButton = ({ bookId, email }) => {
     };
 
     checkFavoriteStatus();
-  }, [bookId]);
+
+  }, []);
 
 
 
-
-
-
-  
-
-//   useEffect(() => {
-//     // Check if the user is logged out
-//     const isUserLoggedOut = !localStorage.getItem('userInfo'); // You can modify this based on your authentication logic
-
-//     // If user is logged out, reset the state
-//     if (isUserLoggedOut) {
-//       setIsAddedToFavorites(false);
-//     }
-//   }, []);
 
   const handleAddToFavorites = async () => {
     try {

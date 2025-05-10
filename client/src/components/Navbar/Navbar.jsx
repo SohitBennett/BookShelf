@@ -48,7 +48,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { FaUser } from "react-icons/fa"; 
 import axios from 'axios';
 import { useUserContext } from '../../userContext';
-
+import Dropdown from '../DropDown/Dropdown';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -59,7 +59,8 @@ const Navbar = () => {
   const { email, setEmail } = useUserContext();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const [click, setClick] = useState(false);
+  const { genreName } = useUserContext;
 
   useEffect(() => {
     
@@ -116,7 +117,12 @@ const Navbar = () => {
         window.location.href = "/";
     }
 };
+const handleDropdownOpen = () => {
+  setIsDropdownOpen(prevState => !prevState); // Toggle the dropdown state
+};
 
+const handleClick = () => setClick(!click);
+const closeMobileMenu = () => setClick(false); 
 
     
 
@@ -126,7 +132,7 @@ return (
       <div className='brand-and-toggler flex flex-sb'>
         <Link to="/" className='navbar-brand flex'>
           <img src={logoImg} alt="site logo" />
-          <span className='text-uppercase fw-7 fs-24 ls-1'></span>
+          <span className='text-uppercase fw-7 fs-24 ls-1'>Bookshelf</span>
         </Link>
         <button type="button" className='navbar-toggler-btn' onClick={handleNavbar}>
           <HiOutlineMenuAlt3 size={35} style={{ color: `${toggleMenu ? "#fff" : "#010101"}` }} />
@@ -135,35 +141,53 @@ return (
 
       <div className={toggleMenu ? "navbar-collapse show-navbar-collapse" : "navbar-collapse"}>
         <ul className="navbar-nav">
-          
+
           <li className='nav-item'>
-            <Link to="/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'onClick={handleLogout}>Logout</Link>
+            <li className='nav-link text-uppercase text-white fs-22 fw-6 ls-1 ' onClick={handleDropdownOpen}>
+              <Link to='' className='nav-link text-uppercase text-white fs-22 fw-6 ls-1' onClick={closeMobileMenu}>
+                Explore <i className='fas fa-caret-down' />
+              </Link>
+              {isDropdownOpen && <Dropdown />}
+            </li>
           </li>
+
+          {/* <li className='nav-item'>
+            <Link to="/" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'onClick={handleLogout}>Logout</Link>
+          </li> */}
+
           <li className='nav-item'>
+            {localStorage.getItem("userInfo") && (
+              <Link to="/" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1' onClick={handleLogout}>Logout</Link>
+            )}
+          </li>
+
+
+
+          {/* <li className='nav-item'>
             <Link to="/pomodoro" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Pomodoro</Link>
           </li>
           <li className='nav-item'>
             <Link to="/lofi" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Lofi</Link>
-          </li>
+          </li> */}
           
-          <li className='nav-item'>
+          {/* <li className='nav-item'>
             <Link to="/newest" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Newest</Link>
+          </li> */}
+          <li className='nav-item'>
+            <Link to="/" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'>Home</Link>
           </li>
           <li className='nav-item'>
-            <Link to="/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Home</Link>
-          </li>
-          <li className='nav-item'>
-            <Link to="search" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Search</Link>
+            <Link to="search" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'>Search</Link>
           </li>
           
-
+          
           <li className='nav-item'>
             {!localStorage.getItem("userInfo") ? (
-              <Link to="loginsignup" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
+              <Link to="loginsignup" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'>
                 <FaUser size={20} />
               </Link>
             ) : (
-              <Link to="/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
+              <Link to="/" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'>
                 <FaUser size={20} />
               </Link>
             )}
@@ -172,7 +196,7 @@ return (
 
           <li className='nav-item'>
             {/* Use className instead of classNa */}
-            <Link to="dashboard" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>{userName}</Link>
+            <Link to="dashboard" className='nav-link text-uppercase text-black fs-22 fw-6 ls-1'>{userName}</Link>
           </li>
         </ul>
       </div>

@@ -46,11 +46,11 @@ export const useUserContext = () => useContext(UserContext);
 export const UserProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState(""); // Change userId to email for consistency
-  // Add userId state
   const [userId, setUserId] = useState("");
+  const [genreName, setGenreName] = useState("");
 
   return (
-    <UserContext.Provider value={{ userName, setUserName, email, setEmail, userId, setUserId }}>
+    <UserContext.Provider value={{ userName, setUserName, email, setEmail, userId, setUserId, genreName, setGenreName }}>
       {children}
     </UserContext.Provider>
   );

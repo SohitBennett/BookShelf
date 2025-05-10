@@ -24,6 +24,8 @@
    */
 
 
+   /* ------------------------working pomodoro------------------ */
+
    .pomodoro {
     text-align: center;
   }
@@ -69,4 +71,25 @@
     height: 100%;
     background-color: transparent;
   }
-     
+
+  .timer-heading {
+    color: white; /* Change this color to the desired color */
+  }
+
+  .white-button {
+    background-color: white;
+    color: black; /* Text color */
+    border: none;
+    padding: 0;
+  }
+  
+  .white-button:hover {
+    background-color: #f5f5f5; /* Hover color */
+  }
+  
+  .white-button:focus {
+    outline: none;
+  }
+  
+
+/* Pomodoro.css */

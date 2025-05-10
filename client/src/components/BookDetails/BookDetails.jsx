@@ -154,6 +154,7 @@ const BookDetails = () => {
   return (
     <section className='book-details'>
       {/* <Navbar /> */}
+
       <div className='container'>
         <button type='button' className='flex flex-c back-btn' onClick={() => navigate("/book")}>
           <FaArrowLeft size = {22} />

@@ -19,7 +19,12 @@ import Review from './components/Review/Review';
 import UserDetails from './pages/LoginSignup/userDetails';
 import RenderUs from './pages/LoginSignup/RenderUs';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Genre from './pages/Genre/Genre';
+import GenrePage from './pages/GenrePage/GenrePage';
+import ChatBot from './components/ChatBot/ChatBot';
 import { UserProvider } from './userContext';
+import Recommendations from './components/ml_model/Recommendations';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -45,6 +50,10 @@ root.render(
           <Route path='/review' element={<Review />}></Route>
           <Route path='/renderus' element={<RenderUs />}></Route>
           <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/genre' element={<Genre />}></Route>
+          <Route path='/genrepage/:genreName' element={<GenrePage />}></Route>
+          <Route path='/chatbot' element={<ChatBot />}></Route>
+          <Route path='/recommendations' element={<Recommendations />}></Route>
         </Routes>
       </BrowserRouter>,
     </UserProvider>

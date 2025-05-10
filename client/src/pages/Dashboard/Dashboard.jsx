@@ -7,14 +7,19 @@ import CustomHeader from "./components/Header";
 import MainContent from "./components/MainContent";
 import SideContent from "./components/SideContent";
 import "./Dashboard.css";
-
+import Background from "../../components/Background/Background";
 
 const { Sider, Header, Content } = Layout;
 
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [playStatus,setPlayStatus] = useState(true);
+
+
   return (
+    
     <Layout>
+      
       <Sider
         theme="light"
         trigger={null}
@@ -35,7 +40,9 @@ const Dashboard = () => {
         <Header className="header">
           <CustomHeader />
         </Header>
+        
         <Content className="content">
+          
           <Flex gap='large'>
             <MainContent />
             <SideContent />

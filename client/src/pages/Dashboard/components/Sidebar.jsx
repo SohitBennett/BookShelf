@@ -39,7 +39,7 @@ const Sidebar = () => {
         className="menu-bar"
         items={[
           { key: "1", icon: <UserOutlined />, label: "Dashboard" },
-          { key: "2", icon: <CarryOutOutlined />, label: "My Books" },
+          { key: "2", icon: <CarryOutOutlined />, label: "My Favorite" },
           { key: "3", icon: <OrderedListOutlined />, label: "To Read" },
           { key: "4", icon: <ProfileOutlined />, label: "Profile" },
           { key: "5", icon: <SettingOutlined />, label: "Settings" },
