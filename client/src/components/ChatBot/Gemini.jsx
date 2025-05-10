@@ -9,7 +9,7 @@
 //   const [generatingAnswer, setGeneratingAnswer] = useState(false);
 //   const [messages, setMessages] = useState([]);
 //   const [isTyping, setIsTyping] = useState(false);
-//   const API_KEY = "AIzaSyCXnkMJ8CgohWdQf0-mR2yBpd_h8C9WH9M";
+//   
 
   
   
@@ -89,7 +89,7 @@ function Gemini() {
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
-  const API_KEY = "AIzaSyCXnkMJ8CgohWdQf0-mR2yBpd_h8C9WH9M";
+
 
 //   async function generateAnswer(e) {
 //     setGeneratingAnswer(true);
