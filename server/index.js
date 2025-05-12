@@ -55,7 +55,7 @@ app.use(express.json())
 //     credentials: true
 // }));
 app.use(cors({
-    origin: ['https://book-shelf-lime.vercel.app/', process.env.FRONTEND_URL || '*'],
+    origin: ['https://book-shelf-lime.vercel.app', process.env.FRONTEND_URL || '*'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
