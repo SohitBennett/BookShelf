@@ -199,6 +199,7 @@
 
 
 import React, { Component } from "react";
+import { BASE_URL } from "../../utils/api";
 
 export default class UserDetails extends Component {
     constructor(props) {
@@ -210,7 +211,7 @@ export default class UserDetails extends Component {
 
     componentDidMount() {
         // Assuming you're fetching user data from an API endpoint
-        fetch("http://localhost:3001/userData", {
+        fetch(`${BASE_URL}/userData`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

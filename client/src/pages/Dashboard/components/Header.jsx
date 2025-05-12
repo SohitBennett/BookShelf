@@ -5,6 +5,7 @@ import { MessageOutlined, NotificationOutlined, UserOutlined } from '@ant-design
 import { useUserContext } from "../../../userContext";
 import axios from "axios";
 import { useEffect, useState } from 'react';
+import { BASE_URL } from "../../../utils/api";
 
 const CustomHeader = () => {
   // const { userName } = useUserContext();
@@ -29,7 +30,7 @@ const CustomHeader = () => {
         console.log(parsedPayload.email);
         const email = parsedPayload.email;
         setEmail(email);
-        axios.post('http://localhost:3001/userName', {
+        axios.post(`${BASE_URL}/userName`, {
           email
         })
         .then((response) => {

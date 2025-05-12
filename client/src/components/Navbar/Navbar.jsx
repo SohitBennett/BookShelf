@@ -49,6 +49,7 @@ import { FaUser } from "react-icons/fa";
 import axios from 'axios';
 import { useUserContext } from '../../userContext';
 import Dropdown from '../DropDown/Dropdown';
+import { BASE_URL } from '../../utils/api';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -79,7 +80,8 @@ const Navbar = () => {
         console.log(parsedPayload.email);
         const email = parsedPayload.email;
         setEmail(email);
-        axios.post('http://localhost:3001/userName', {
+        console.log(BASE_URL);
+        axios.post(`${BASE_URL}/userName`, {
           email
         })
         .then((response) => {
@@ -97,7 +99,7 @@ const Navbar = () => {
   const handleName = (e) => {
     const email = userInfo.email;
     e.preventDefault();
-    axios.post('http://localhost:3001/userName', {
+    axios.post(`${BASE_URL}/userName`, {
         email
     })
     .then((response) => {

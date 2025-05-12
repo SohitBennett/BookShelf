@@ -123,7 +123,7 @@ app.post('/userName', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("Server is running");
+    console.log(`Server is running on port ${port}`);
 });
 // fetch userdata route
 app.post("/userData", async (req, res) => {
@@ -274,6 +274,5 @@ app.get('/api/recommend/:book_title', async (req, res) => {
 });
 
 
-
-
+  
 

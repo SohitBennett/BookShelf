@@ -173,6 +173,7 @@ import React, { useState } from "react";
 import { json, useNavigate } from "react-router-dom";
 import * as Components from './Components';
 import axios from 'axios';
+import { BASE_URL } from "../../utils/api";
 
 function App() {
     const navigate = useNavigate();
@@ -195,7 +196,7 @@ function App() {
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/loginsignup', {
+        axios.post(`${BASE_URL}/loginsignup`, {
             operation: "signup", // Specify operation as "signup"
             name,
             email,
@@ -210,7 +211,7 @@ function App() {
 
     const handleSignIn = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/loginsignup', {
+        axios.post(`${BASE_URL}/loginsignup`, {
             operation: "signin", // Specify operation as "signin"
             email,
             password

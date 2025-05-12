@@ -121,6 +121,11 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BASE_URL } from '../../utils/api';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+
+
+
 
 
 const AddToFavoritesButton = ({ bookId, email }) => {
@@ -132,7 +137,7 @@ const AddToFavoritesButton = ({ bookId, email }) => {
 
     const checkFavoriteStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/check-favorite/${bookId}`, {
+        const response = await axios.get(`${BASE_URL}/check-favorite/${bookId}`, {
           params: {
             email: email,
             bookId: bookId
@@ -154,7 +159,7 @@ const AddToFavoritesButton = ({ bookId, email }) => {
 
   const handleAddToFavorites = async () => {
     try {
-      await axios.post('http://localhost:3001/api/favorites/add', {
+      await axios.post(`${BASE_URL}/api/favorites/add`, {
         bookId: bookId,
         email: email,
       });
@@ -165,8 +170,14 @@ const AddToFavoritesButton = ({ bookId, email }) => {
   };
 
   return (
+    // <button onClick={handleAddToFavorites} disabled={isAddedToFavorites}>
+    //   {isAddedToFavorites ? 'Added to Favorites' : 'Add to Favorites'}
+    // </button>
     <button onClick={handleAddToFavorites} disabled={isAddedToFavorites}>
-      {isAddedToFavorites ? 'Added to Favorites' : 'Add to Favorites'}
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+        {isAddedToFavorites ? <FaHeart color="red" /> : <FaRegHeart />}
+        {isAddedToFavorites ? 'Added to Favorites' : 'Add to Favorites'}
+      </span>
     </button>
   );
 };

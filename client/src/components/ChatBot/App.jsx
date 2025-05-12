@@ -9,12 +9,13 @@ import { useState } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../Navbar/Navbar";
+import { BASE_URL } from "../../utils/api";
 
 function App() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
-  const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+  const API_KEY = 'AIzaSyCXnkMJ8CgohWdQf0-mR2yBpd_h8C9WH9M';
 
 
   async function generateAnswer(e) {
@@ -30,9 +31,12 @@ function App() {
         },
       });
 
+
+
       setAnswer(
         response["data"]["candidates"][0]["content"]["parts"][0]["text"]
       );
+
     } catch (error) {
       console.log(error);
       setAnswer("Sorry - Something went wrong. Please try again!");

@@ -147,7 +147,6 @@ const Book = (book) => {
        
         
         <div className='book-item-info-item bookmark-button fs-15'>
-          
           <AddToFavoritesButton bookId={book.id} email={email} />
         </div>
       </div>
