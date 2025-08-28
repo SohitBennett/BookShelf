@@ -4,18 +4,17 @@ BookShelf is a MERN stack web application that allows users to discover, track, 
 
 Features
 
-Browse and search: Discover the newest and most popular books. Search by title, author, or genre.
-AI recommendations: Personalized book suggestions based on user preferences.
-Favorites: Save books to a personal collection.
-Pomodoro timer: Stay productive with a built-in reading timer.
-Authentication: Secure login/logout functionality with MongoDB integration.
-API integrations: Uses OpenLibrary and Google Books API to fetch book data.
-Responsive UI: Fully optimized for desktop, tablet, and mobile.
+1. Browse and search: Discover the newest and most popular books. Search by title, author, or genre.
+2. AI recommendations: Personalized book suggestions based on user preferences.
+3. Favorites: Save books to a personal collection.
+4. Pomodoro timer: Stay productive with a built-in reading timer.
+5. Authentication: Secure login/logout functionality with MongoDB integration.
+6. API integrations: Uses OpenLibrary and Google Books API to fetch book data.
+7. Responsive UI: Fully optimized for desktop, tablet, and mobile.
 
-Tech Stack
+Tech Stack - 
 
 Frontend
-
 1. React.js
 2. Redux (for state management)
 3. TailwindCSS (for responsive UI design)
@@ -34,41 +33,6 @@ Screenshots
 <img width="2879" height="1466" alt="image" src="https://github.com/user-attachments/assets/8bdac168-ed42-4b36-a9e0-fe54813fa179" />
 <img width="2879" height="1466" alt="image" src="https://github.com/user-attachments/assets/ac10227b-321b-43c9-a2a9-85e610550fce" />
 <img width="2879" height="1473" alt="image" src="https://github.com/user-attachments/assets/57edb6e5-727f-4a03-ac97-cd7562ae46d1" />
-
-
-Installation & Setup
-
-Clone the repository:
-
-git clone https://github.com/SohitBennett/bookshelf.git
-cd bookshelf
-Install dependencies:
-
-# Backend
-cd server
-npm install
-
-# Frontend
-cd client
-npm install
-
-Create a .env file in the server/ directory with the following:
-
-MONGO_URI=your_mongodb_connection_string
-PORT=5000
-REACT_APP_GOOGLE_BOOKS_API_KEY=your_api_key
-
-
-Run the application:
-
-# Backend
-cd server
-npm start
-
-# Frontend
-cd client
-npm start
-Open http://localhost:3000 in your browser.
 
 Future Enhancements
 1. Reading progress tracking
