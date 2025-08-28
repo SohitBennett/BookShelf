@@ -30,8 +30,11 @@ Other Integrations
 2. Google Books API
 
 Screenshots
+1. Landing Page 
 <img width="2879" height="1466" alt="image" src="https://github.com/user-attachments/assets/8bdac168-ed42-4b36-a9e0-fe54813fa179" />
+2. Browse Popular Books 
 <img width="2879" height="1466" alt="image" src="https://github.com/user-attachments/assets/ac10227b-321b-43c9-a2a9-85e610550fce" />
+3. Browse Newest Books
 <img width="2879" height="1473" alt="image" src="https://github.com/user-attachments/assets/57edb6e5-727f-4a03-ac97-cd7562ae46d1" />
 
 Future Enhancements
